@@ -1,0 +1,38 @@
+/* OpenFOAM 12 - Presion del aire alrededor del cohete */
+
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      p;
+}
+
+dimensions [0 2 -2 0 0 0 0];
+
+internalField uniform 0;
+
+boundaryField
+{
+    inlet
+    {
+        type zeroGradient;
+    }
+
+    outlet
+    {
+        type fixedValue;
+        value uniform 0;
+    }
+
+    farField
+    {
+        type zeroGradient;
+    }
+
+    cohete
+    {
+        type zeroGradient;
+    }
+}

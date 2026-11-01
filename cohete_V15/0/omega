@@ -1,0 +1,41 @@
+/* OpenFOAM 12 - Disipacion especifica turbulenta del cohete */
+
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      omega;
+}
+
+dimensions [0 0 -1 0 0 0 0];
+
+internalField uniform 200.7;
+
+boundaryField
+{
+    inlet
+    {
+        type fixedValue;
+        value uniform 200.7;
+    }
+
+    outlet
+    {
+        type inletOutlet;
+        inletValue uniform 200.7;
+        value uniform 200.7;
+    }
+
+    farField
+    {
+        type zeroGradient;
+    }
+
+    cohete
+    {
+        type omegaWallFunction;
+        value uniform 200.7;
+    }
+}

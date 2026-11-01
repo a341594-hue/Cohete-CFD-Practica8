@@ -1,0 +1,24 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object forcesAuditoriaDict;
+}
+
+fuerzasAuditoria
+{
+    type forces;
+    libs ("libforces.so");
+
+    patches (cohete);
+
+    rho rhoInf;
+    rhoInf 1.225;
+
+    CofR (-0.2915325 0 0);
+
+    log true;
+    writeControl timeStep;
+    writeInterval 1;
+}
